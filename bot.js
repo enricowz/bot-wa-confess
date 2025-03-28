@@ -1,4 +1,8 @@
-const { default: makeWASocket, useMultiFileAuthState } = require('@whiskeysockets/baileys');
+const conn = makeWASocket({
+    auth: state,
+    printQRInTerminal: false, // Matikan QR
+    usePairingCode: true // Aktifkan pairing code
+});
 const fs = require('fs');
 const moment = require('moment');
 
@@ -54,3 +58,16 @@ async function startBot() {
 }
 
 startBot().catch(console.error);
+
+async function startPairing() {
+    const conn = makeWASocket({
+        auth: {},
+        printQRInTerminal: false,
+        usePairingCode: true
+    });
+
+    const pairingCode = await conn.requestPairingCode("6281244503437"); // Ganti dengan nomor kamu
+    console.log("Pairing Code:", pairingCode);
+}
+
+startPairing();
