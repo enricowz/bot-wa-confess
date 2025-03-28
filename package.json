@@ -1,0 +1,17 @@
+{
+  "name": "confess-bot",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp untuk confess",
+  "main": "bot.js",
+  "dependencies": {
+    "@adiwajshing/baileys": "^3.5.3",
+    "@whiskeysockets/baileys": "^6.17.16",
+    "fs": "0.0.1-security",
+    "moment": "^2.29.4"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "Ricz",
+  "license": "ISC"
+}
